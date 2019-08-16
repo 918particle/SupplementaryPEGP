@@ -1,0 +1,67 @@
+\documentclass[10pt,oneside]{book}
+\usepackage[margin=2cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage{subfiles}
+\usepackage{fancyhdr}
+\usepackage{epigraph}
+\usepackage{url}
+\usepackage{makecell}
+\usepackage[titletoc]{appendix}
+\title{Professional Evaluation and Growth Plan}
+\author{Jordan C Hanson, PhD}
+\date{\today}
+\usepackage[book]{ragged2e}
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Jordan C Hanson, PhD}
+\lhead{Professional Evaluation and Growth Plan}
+\rfoot{\thepage}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\clearpage
+
+\section{Teaching Philosophy}
+
+\begin{flushleft}
+\subfile{teaching_philosophy/teaching_philosophy}
+\end{flushleft}
+
+\section{Introductory Course Descriptions}
+
+\begin{flushleft}
+\subfile{intro_course_desc/intro_course_desc}
+\end{flushleft}
+
+\subsection{Analysis of Student Evaluations}
+
+\begin{flushleft}
+\subfile{intro_course_desc_eval/intro_course_desc_eval}
+\end{flushleft}
+
+\section{Advanced Course Descriptions}
+
+\begin{flushleft}
+\subfile{adv_course_desc/adv_course_desc}
+\end{flushleft}
+
+\subsection{Analysis of Student Evaluations}
+
+\begin{flushleft}
+\subfile{adv_course_desc_eval/adv_course_desc_eval}
+\end{flushleft}
+
+\section{Proposed Future Courses}
+
+\begin{flushleft}
+\subfile{prop_future_courses/prop_future_courses}
+\end{flushleft}
+
+\bibliographystyle{ieeetr}
+\bibliography{biblio}
+
+\end{document}
