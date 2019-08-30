@@ -462,104 +462,104 @@ void plots(const char *fileTitle)
 	// p11->Print("Q15_calculus_based.pdf");
 
 	// //=====Question 14 versus semester for PHYS135A/B.  m = number of times taught.=====//
-	Float_t x9[m];
-	Float_t y9[m];
-	Float_t ex9[m];
-	Float_t ey9[m];
-	c = 0;
+	// Float_t x9[m];
+	// Float_t y9[m];
+	// Float_t ex9[m];
+	// Float_t ey9[m];
+	// c = 0;
 
-	for(Int_t i=0;i<n;++i)
-	{
-		eval_data->GetEntry(i);
-		string thisCourse(course);
-		if((thisCourse=="135A" || thisCourse=="135B") && question==14)
-		{
-			x9[c] = (Float_t)c+1.0;
-			ex9[c] = 0.0;
-			y9[c] = mean;
-			ey9[c] = sd/sqrt(N)+0.01;
-			++c;
-		}
-	}
+	// for(Int_t i=0;i<n;++i)
+	// {
+	// 	eval_data->GetEntry(i);
+	// 	string thisCourse(course);
+	// 	if((thisCourse=="135A" || thisCourse=="135B") && question==14)
+	// 	{
+	// 		x9[c] = (Float_t)c+1.0;
+	// 		ex9[c] = 0.0;
+	// 		y9[c] = mean;
+	// 		ey9[c] = sd/sqrt(N)+0.01;
+	// 		++c;
+	// 	}
+	// }
 
-	temp1 = y9[2];
-	temp2 = ey9[2];
-	y9[2] = y9[3];
-	ey9[2] = ey9[3];
-	y9[3] = temp1;
-	ey9[3] = temp2;
+	// temp1 = y9[2];
+	// temp2 = ey9[2];
+	// y9[2] = y9[3];
+	// ey9[2] = ey9[3];
+	// y9[3] = temp1;
+	// ey9[3] = temp2;
 
-	TCanvas* Q14_algebra_based = new TCanvas("Q14_algebra_based","Q14_algebra_based",1200,1200);
-	TPad* p12 = new TPad("p12","p12",0.0,0.0,1.0,1.0);
-	p12->Draw();
-	p12->SetLeftMargin(lmargin);
-	p12->SetRightMargin(rmargin);
-	p12->SetTopMargin(tmargin);
-	p12->SetBottomMargin(bmargin);
-	p12->SetGridx();
-	p12->SetGridy();
-	p12->SetTickx();
-	p12->SetTicky();
-	p12->cd();
-	h_mark->GetYaxis()->SetTitle("Q14: Mean #pm Error in Mean");
-	h_mark->Draw();
+	// TCanvas* Q14_algebra_based = new TCanvas("Q14_algebra_based","Q14_algebra_based",1200,1200);
+	// TPad* p12 = new TPad("p12","p12",0.0,0.0,1.0,1.0);
+	// p12->Draw();
+	// p12->SetLeftMargin(lmargin);
+	// p12->SetRightMargin(rmargin);
+	// p12->SetTopMargin(tmargin);
+	// p12->SetBottomMargin(bmargin);
+	// p12->SetGridx();
+	// p12->SetGridy();
+	// p12->SetTickx();
+	// p12->SetTicky();
+	// p12->cd();
+	// h_mark->GetYaxis()->SetTitle("Q14: Mean #pm Error in Mean");
+	// h_mark->Draw();
 
-	TGraphErrors *Q14 = new TGraphErrors(m,x9,y9,ex9,ey9);
-	Q14->SetMarkerStyle(standard_marker_style);
-	Q14->SetMarkerSize(standard_marker_size);
-	TF1 *Q14_algebra_based_fit = new TF1("Q14_algebra_based_fit","[0]*x+[1]",xlow,xhigh);
-	Q14->Fit("Q14_algebra_based_fit","0");
-	Q14->Draw("P same");
-	Q14_algebra_based_fit->SetLineColor(kBlack);
-	Q14_algebra_based_fit->SetLineWidth(standard_line_width);
-	Q14_algebra_based_fit->Draw("same");
-	p12->Print("Q14_algebra_based.pdf");
+	// TGraphErrors *Q14 = new TGraphErrors(m,x9,y9,ex9,ey9);
+	// Q14->SetMarkerStyle(standard_marker_style);
+	// Q14->SetMarkerSize(standard_marker_size);
+	// TF1 *Q14_algebra_based_fit = new TF1("Q14_algebra_based_fit","[0]*x+[1]",xlow,xhigh);
+	// Q14->Fit("Q14_algebra_based_fit","0");
+	// Q14->Draw("P same");
+	// Q14_algebra_based_fit->SetLineColor(kBlack);
+	// Q14_algebra_based_fit->SetLineWidth(standard_line_width);
+	// Q14_algebra_based_fit->Draw("same");
+	// p12->Print("Q14_algebra_based.pdf");
 
-	// //=====Question 15 versus semester for PHYS150/180.  m = number of times taught.=====//
-	Float_t x10[m2];
-	Float_t y10[m2];
-	Float_t ex10[m2];
-	Float_t ey10[m2];
-	c2 = 0;
+	// // //=====Question 15 versus semester for PHYS150/180.  m = number of times taught.=====//
+	// Float_t x10[m2];
+	// Float_t y10[m2];
+	// Float_t ex10[m2];
+	// Float_t ey10[m2];
+	// c2 = 0;
 
-	for(Int_t i=0;i<n;++i)
-	{
-		eval_data->GetEntry(i);
-		string thisCourse(course);
-		if((thisCourse=="150" || thisCourse=="180") && question==14)
-		{
-			x10[c2] = (Float_t)c2+1.0;
-			ex10[c2] = 0.0;
-			y10[c2] = mean;
-			ey10[c2] = sd/sqrt(N)+0.01;
-			++c2;
-		}
-	}
+	// for(Int_t i=0;i<n;++i)
+	// {
+	// 	eval_data->GetEntry(i);
+	// 	string thisCourse(course);
+	// 	if((thisCourse=="150" || thisCourse=="180") && question==14)
+	// 	{
+	// 		x10[c2] = (Float_t)c2+1.0;
+	// 		ex10[c2] = 0.0;
+	// 		y10[c2] = mean;
+	// 		ey10[c2] = sd/sqrt(N)+0.01;
+	// 		++c2;
+	// 	}
+	// }
 
-	TCanvas* Q14_calculus_based = new TCanvas("Q14_calculus_based","Q14_calculus_based",1200,1200);
-	TPad* p13 = new TPad("p13","p13",0.0,0.0,1.0,1.0);
-	p13->Draw();
-	p13->SetLeftMargin(lmargin);
-	p13->SetRightMargin(rmargin);
-	p13->SetTopMargin(tmargin);
-	p13->SetBottomMargin(bmargin);
-	p13->SetGridx();
-	p13->SetGridy();
-	p13->SetTickx();
-	p13->SetTicky();
-	p13->cd();
-	h_mark->Draw();
+	// TCanvas* Q14_calculus_based = new TCanvas("Q14_calculus_based","Q14_calculus_based",1200,1200);
+	// TPad* p13 = new TPad("p13","p13",0.0,0.0,1.0,1.0);
+	// p13->Draw();
+	// p13->SetLeftMargin(lmargin);
+	// p13->SetRightMargin(rmargin);
+	// p13->SetTopMargin(tmargin);
+	// p13->SetBottomMargin(bmargin);
+	// p13->SetGridx();
+	// p13->SetGridy();
+	// p13->SetTickx();
+	// p13->SetTicky();
+	// p13->cd();
+	// h_mark->Draw();
 
-	TGraphErrors *Q14_2 = new TGraphErrors(m2,x10,y10,ex10,ey10);
-	Q14_2->SetMarkerStyle(standard_marker_style);
-	Q14_2->SetMarkerSize(standard_marker_size);
-	TF1 *Q14_calculus_based_fit = new TF1("Q14_calculus_based_fit","[0]*x+[1]",xlow,xhigh);
-	Q14_2->Fit("Q14_calculus_based_fit","0");
-	Q14_2->Draw("P same");
-	Q14_calculus_based_fit->SetLineColor(kBlack);
-	Q14_calculus_based_fit->SetLineWidth(standard_line_width);
-	Q14_calculus_based_fit->Draw("same");
-	p13->Print("Q14_calculus_based.pdf");
+	// TGraphErrors *Q14_2 = new TGraphErrors(m2,x10,y10,ex10,ey10);
+	// Q14_2->SetMarkerStyle(standard_marker_style);
+	// Q14_2->SetMarkerSize(standard_marker_size);
+	// TF1 *Q14_calculus_based_fit = new TF1("Q14_calculus_based_fit","[0]*x+[1]",xlow,xhigh);
+	// Q14_2->Fit("Q14_calculus_based_fit","0");
+	// Q14_2->Draw("P same");
+	// Q14_calculus_based_fit->SetLineColor(kBlack);
+	// Q14_calculus_based_fit->SetLineWidth(standard_line_width);
+	// Q14_calculus_based_fit->Draw("same");
+	// p13->Print("Q14_calculus_based.pdf");
 
 	// //=====Question 17 vs. 16 for PHYS135A/B.  m = number of times taught.=====//
 	// TCanvas* Q16_Q17_algebra_based = new TCanvas("Q16_Q17_algebra_based","Q16_Q17_algebra_based",1200,1200);
@@ -630,7 +630,7 @@ void plots(const char *fileTitle)
 	// =====All questions, all classes vs. semester number=====//
 	// const Int_t q = 8; //number of lower-division courses I've taught
 	// const Int_t q2 = 4; //number of upper-division courses I've taught
-	// const Int_t p = 16; //number of questions considered
+	const Int_t p = 16; //number of questions considered
 	// Int_t counter = 0;
 	// Int_t counter2 = 0;
 	// Float_t qoff = 10.0;
@@ -725,7 +725,7 @@ void plots(const char *fileTitle)
 	// delete allQ_lowerDiv;
 	// delete allQ_upperDiv;
 
-	//Create LaTeX table content, for algebra-based and calculus-based, and compare COSC330 w/ COSC390.
+	// Create LaTeX table content, for algebra-based and calculus-based
 	// Float_t algebra_based_q_first[p];
 	// Float_t algebra_based_q_first_err[p];
 	// Float_t algebra_based_q_last[p];
@@ -815,4 +815,53 @@ void plots(const char *fileTitle)
 	// std::cout<<"\\end{tabular}"<<std::endl;
 	// std::cout<<"\\caption{\\label{tab:courses:intro_shifts_2} Comparison calculus-based numbers for the first time taught (first column) to the most recent time (second column). The raw change is given in the third column, and the change divided by the standard deviation is given in the fourth column.}"<<std::endl;
 	// std::cout<<"\\end{table}"<<std::endl;
+
+	// Compare COSC330 w/ COSC390.
+	Float_t adv_q_first[p];
+	Float_t adv_q_first_err[p];
+	Float_t adv_q_last[p];
+	Float_t adv_q_last_err[p];
+	for(Int_t i=0;i<n;++i)
+	{
+		eval_data->GetEntry(i);
+		string thisCourse(course);
+		if(thisCourse=="PHYS306_COSC330" && question>=10)
+		{
+			adv_q_first[question-10] = mean;
+			adv_q_first_err[question-10] = sd/sqrt(N);
+		}
+		if(thisCourse=="COSC390" && question>=10)
+		{
+			adv_q_last[question-10] = mean;
+			adv_q_last_err[question-10] = sd/sqrt(N);
+		}
+	}
+	std::cout.precision(3);
+	std::cout<<"\\begin{table}"<<std::endl;
+	std::cout<<"\\small"<<std::endl;
+	std::cout<<"\\centering"<<std::endl;
+	std::cout<<"\\begin{tabular}{| c | c | c | c | c |}"<<std::endl;
+	std::cout<<"\\hline"<<std::endl;
+	std::cout<<"\\hline"<<std::endl;
+	std::cout<<"Question & First Time & Most Recent Time & Raw change & Standard deviations \\\\"<<std::endl;
+	std::cout<<"\\hline"<<std::endl;
+	for(Int_t z=0;z<p;++z)
+	{
+		std::cout<<z+10<<" & ";
+		std::cout<<adv_q_first[z]<<" $\\pm$ "<<adv_q_first_err[z];
+		std::cout<<" & ";
+		std::cout<<adv_q_last[z]<<" $\\pm$ "<<adv_q_last_err[z];
+		std::cout<<" & ";
+		Float_t delta = adv_q_last[z]-adv_q_first[z];
+		Float_t sigma = sqrt((adv_q_last_err[z])*(adv_q_last_err[z])
+			+(adv_q_first_err[z])*(adv_q_first_err[z]));
+		std::cout<<delta<<" $\\pm$ "<<sigma<<" & "<<delta/sigma;
+		std::cout<<" \\\\";
+		std::cout<<" \\hline"<<std::endl;
+	}
+	std::cout<<"\\hline"<<std::endl;
+	std::cout<<"\\end{tabular}"<<std::endl;
+	std::cout<<"\\caption{\\label{tab:courses:adv_shifts} Comparison of advanced course numbers for the first time taught (first column) to the most recent time (second column). The raw change is given in the third column, and the change divided by the standard deviation is given in the fourth column.}"<<std::endl;
+	std::cout<<"\\end{table}"<<std::endl;
+	std::cout<<std::endl;
 }
