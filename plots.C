@@ -515,7 +515,7 @@ void plots(const char *fileTitle)
 	// Q14_algebra_based_fit->Draw("same");
 	// p12->Print("Q14_algebra_based.pdf");
 
-	// // //=====Question 15 versus semester for PHYS150/180.  m = number of times taught.=====//
+	// // //=====Question 14 versus semester for PHYS150/180.  m = number of times taught.=====//
 	// Float_t x10[m2];
 	// Float_t y10[m2];
 	// Float_t ex10[m2];
@@ -560,6 +560,300 @@ void plots(const char *fileTitle)
 	// Q14_calculus_based_fit->SetLineWidth(standard_line_width);
 	// Q14_calculus_based_fit->Draw("same");
 	// p13->Print("Q14_calculus_based.pdf");
+
+	// //=====Question 12 versus semester for PHYS135A/B.  m = number of times taught.=====//
+	// Float_t x11[m];
+	// Float_t y11[m];
+	// Float_t ex11[m];
+	// Float_t ey11[m];
+	// c = 0;
+
+	// for(Int_t i=0;i<n;++i)
+	// {
+	// 	eval_data->GetEntry(i);
+	// 	string thisCourse(course);
+	// 	if((thisCourse=="135A" || thisCourse=="135B") && question==12)
+	// 	{
+	// 		x11[c] = (Float_t)c+1.0;
+	// 		ex11[c] = 0.0;
+	// 		y11[c] = mean;
+	// 		ey11[c] = sd/sqrt(N)+0.01;
+	// 		++c;
+	// 	}
+	// }
+
+	// TCanvas* Q12_algebra_based = new TCanvas("Q12_algebra_based","Q12_algebra_based",1200,1200);
+	// TPad* p14 = new TPad("p14","p14",0.0,0.0,1.0,1.0);
+	// p14->Draw();
+	// p14->SetLeftMargin(lmargin);
+	// p14->SetRightMargin(rmargin);
+	// p14->SetTopMargin(tmargin);
+	// p14->SetBottomMargin(bmargin);
+	// p14->SetGridx();
+	// p14->SetGridy();
+	// p14->SetTickx();
+	// p14->SetTicky();
+	// p14->cd();
+	// h_mark->GetYaxis()->SetTitle("Q12: Mean #pm Error in Mean");
+	// h_mark->Draw();
+
+	// TGraphErrors *Q12 = new TGraphErrors(m,x11,y11,ex11,ey11);
+	// Q12->SetMarkerStyle(standard_marker_style);
+	// Q12->SetMarkerSize(standard_marker_size);
+	// TF1 *Q12_algebra_based_fit = new TF1("Q12_algebra_based_fit","[0]*x+[1]",xlow,xhigh);
+	// Q12->Fit("Q12_algebra_based_fit","0");
+	// Q12->Draw("P same");
+	// Q12_algebra_based_fit->SetLineColor(kBlack);
+	// Q12_algebra_based_fit->SetLineWidth(standard_line_width);
+	// Q12_algebra_based_fit->Draw("same");
+	// p14->Print("Q12_algebra_based.pdf");
+
+	// // //=====Question 12 versus semester for PHYS150/180.  m = number of times taught.=====//
+	// Float_t x12[m2];
+	// Float_t y12[m2];
+	// Float_t ex12[m2];
+	// Float_t ey12[m2];
+	// c2 = 0;
+
+	// for(Int_t i=0;i<n;++i)
+	// {
+	// 	eval_data->GetEntry(i);
+	// 	string thisCourse(course);
+	// 	if((thisCourse=="150" || thisCourse=="180") && question==12)
+	// 	{
+	// 		x12[c2] = (Float_t)c2+1.0;
+	// 		ex12[c2] = 0.0;
+	// 		y12[c2] = mean;
+	// 		ey12[c2] = sd/sqrt(N)+0.01;
+	// 		++c2;
+	// 	}
+	// }
+
+	// TCanvas* Q12_calculus_based = new TCanvas("Q12_calculus_based","Q12_calculus_based",1200,1200);
+	// TPad* p15 = new TPad("p15","p15",0.0,0.0,1.0,1.0);
+	// p15->Draw();
+	// p15->SetLeftMargin(lmargin);
+	// p15->SetRightMargin(rmargin);
+	// p15->SetTopMargin(tmargin);
+	// p15->SetBottomMargin(bmargin);
+	// p15->SetGridx();
+	// p15->SetGridy();
+	// p15->SetTickx();
+	// p15->SetTicky();
+	// p15->cd();
+	// h_mark->Draw();
+
+	// TGraphErrors *Q12_2 = new TGraphErrors(m2,x12,y12,ex12,ey12);
+	// Q12_2->SetMarkerStyle(standard_marker_style);
+	// Q12_2->SetMarkerSize(standard_marker_size);
+	// TF1 *Q12_calculus_based_fit = new TF1("Q12_calculus_based_fit","[0]*x+[1]",xlow,xhigh);
+	// Q12_2->Fit("Q12_calculus_based_fit","0");
+	// Q12_2->Draw("P same");
+	// Q12_calculus_based_fit->SetLineColor(kBlack);
+	// Q12_calculus_based_fit->SetLineWidth(standard_line_width);
+	// Q12_calculus_based_fit->Draw("same");
+	// p15->Print("Q12_calculus_based.pdf");
+
+	// //=====Question 19 versus semester for PHYS135A/B.  m = number of times taught.=====//
+	// Float_t x11[m];
+	// Float_t y11[m];
+	// Float_t ex11[m];
+	// Float_t ey11[m];
+	// c = 0;
+
+	// for(Int_t i=0;i<n;++i)
+	// {
+	// 	eval_data->GetEntry(i);
+	// 	string thisCourse(course);
+	// 	if((thisCourse=="135A" || thisCourse=="135B") && question==19)
+	// 	{
+	// 		x11[c] = (Float_t)c+1.0;
+	// 		ex11[c] = 0.0;
+	// 		y11[c] = mean;
+	// 		ey11[c] = sd/sqrt(N)+0.01;
+	// 		++c;
+	// 	}
+	// }
+
+	// temp1 = y11[2];
+	// temp2 = ey11[2];
+	// y11[2] = y11[3];
+	// ey11[2] = ey11[3];
+	// y11[3] = temp1;
+	// ey11[3] = temp2;
+
+	// TCanvas* Q19_algebra_based = new TCanvas("Q19_algebra_based","Q19_algebra_based",1200,1200);
+	// TPad* p14 = new TPad("p14","p14",0.0,0.0,1.0,1.0);
+	// p14->Draw();
+	// p14->SetLeftMargin(lmargin);
+	// p14->SetRightMargin(rmargin);
+	// p14->SetTopMargin(tmargin);
+	// p14->SetBottomMargin(bmargin);
+	// p14->SetGridx();
+	// p14->SetGridy();
+	// p14->SetTickx();
+	// p14->SetTicky();
+	// p14->cd();
+	// h_mark->GetYaxis()->SetTitle("Q19: Mean #pm Error in Mean");
+	// h_mark->Draw();
+
+	// TGraphErrors *Q12 = new TGraphErrors(m,x11,y11,ex11,ey11);
+	// Q12->SetMarkerStyle(standard_marker_style);
+	// Q12->SetMarkerSize(standard_marker_size);
+	// TF1 *Q12_algebra_based_fit = new TF1("Q12_algebra_based_fit","[0]*x+[1]",xlow,xhigh);
+	// Q12->Fit("Q12_algebra_based_fit","0");
+	// Q12->Draw("P same");
+	// Q12_algebra_based_fit->SetLineColor(kBlack);
+	// Q12_algebra_based_fit->SetLineWidth(standard_line_width);
+	// Q12_algebra_based_fit->Draw("same");
+	// p14->Print("Q19_algebra_based.pdf");
+
+	// // //=====Question 19 versus semester for PHYS150/180.  m = number of times taught.=====//
+	// Float_t x12[m2];
+	// Float_t y12[m2];
+	// Float_t ex12[m2];
+	// Float_t ey12[m2];
+	// c2 = 0;
+
+	// for(Int_t i=0;i<n;++i)
+	// {
+	// 	eval_data->GetEntry(i);
+	// 	string thisCourse(course);
+	// 	if((thisCourse=="150" || thisCourse=="180") && question==19)
+	// 	{
+	// 		x12[c2] = (Float_t)c2+1.0;
+	// 		ex12[c2] = 0.0;
+	// 		y12[c2] = mean;
+	// 		ey12[c2] = sd/sqrt(N)+0.01;
+	// 		++c2;
+	// 	}
+	// }
+
+	// TCanvas* Q12_calculus_based = new TCanvas("Q19_calculus_based","Q19_calculus_based",1200,1200);
+	// TPad* p15 = new TPad("p15","p15",0.0,0.0,1.0,1.0);
+	// p15->Draw();
+	// p15->SetLeftMargin(lmargin);
+	// p15->SetRightMargin(rmargin);
+	// p15->SetTopMargin(tmargin);
+	// p15->SetBottomMargin(bmargin);
+	// p15->SetGridx();
+	// p15->SetGridy();
+	// p15->SetTickx();
+	// p15->SetTicky();
+	// p15->cd();
+	// h_mark->Draw();
+
+	// TGraphErrors *Q12_2 = new TGraphErrors(m2,x12,y12,ex12,ey12);
+	// Q12_2->SetMarkerStyle(standard_marker_style);
+	// Q12_2->SetMarkerSize(standard_marker_size);
+	// TF1 *Q12_calculus_based_fit = new TF1("Q12_calculus_based_fit","[0]*x+[1]",xlow,xhigh);
+	// Q12_2->Fit("Q12_calculus_based_fit","0");
+	// Q12_2->Draw("P same");
+	// Q12_calculus_based_fit->SetLineColor(kBlack);
+	// Q12_calculus_based_fit->SetLineWidth(standard_line_width);
+	// Q12_calculus_based_fit->Draw("same");
+	// p15->Print("Q19_calculus_based.pdf");
+
+	//=====Question 20 versus semester for PHYS135A/B.  m = number of times taught.=====//
+	Float_t x11[m];
+	Float_t y11[m];
+	Float_t ex11[m];
+	Float_t ey11[m];
+	c = 0;
+
+	for(Int_t i=0;i<n;++i)
+	{
+		eval_data->GetEntry(i);
+		string thisCourse(course);
+		if((thisCourse=="135A" || thisCourse=="135B") && question==20)
+		{
+			x11[c] = (Float_t)c+1.0;
+			ex11[c] = 0.0;
+			y11[c] = mean;
+			ey11[c] = sd/sqrt(N)+0.01;
+			++c;
+		}
+	}
+
+	temp1 = y11[2];
+	temp2 = ey11[2];
+	y11[2] = y11[3];
+	ey11[2] = ey11[3];
+	y11[3] = temp1;
+	ey11[3] = temp2;
+
+	TCanvas* Q19_algebra_based = new TCanvas("Q19_algebra_based","Q19_algebra_based",1200,1200);
+	TPad* p14 = new TPad("p14","p14",0.0,0.0,1.0,1.0);
+	p14->Draw();
+	p14->SetLeftMargin(lmargin);
+	p14->SetRightMargin(rmargin);
+	p14->SetTopMargin(tmargin);
+	p14->SetBottomMargin(bmargin);
+	p14->SetGridx();
+	p14->SetGridy();
+	p14->SetTickx();
+	p14->SetTicky();
+	p14->cd();
+	h_mark->GetYaxis()->SetTitle("Q20: Mean #pm Error in Mean");
+	h_mark->Draw();
+
+	TGraphErrors *Q12 = new TGraphErrors(m,x11,y11,ex11,ey11);
+	Q12->SetMarkerStyle(standard_marker_style);
+	Q12->SetMarkerSize(standard_marker_size);
+	TF1 *Q12_algebra_based_fit = new TF1("Q12_algebra_based_fit","[0]*x+[1]",xlow,xhigh);
+	Q12->Fit("Q12_algebra_based_fit","0");
+	Q12->Draw("P same");
+	Q12_algebra_based_fit->SetLineColor(kBlack);
+	Q12_algebra_based_fit->SetLineWidth(standard_line_width);
+	Q12_algebra_based_fit->Draw("same");
+	p14->Print("Q20_algebra_based.pdf");
+
+	// //=====Question 19 versus semester for PHYS150/180.  m = number of times taught.=====//
+	Float_t x12[m2];
+	Float_t y12[m2];
+	Float_t ex12[m2];
+	Float_t ey12[m2];
+	c2 = 0;
+
+	for(Int_t i=0;i<n;++i)
+	{
+		eval_data->GetEntry(i);
+		string thisCourse(course);
+		if((thisCourse=="150" || thisCourse=="180") && question==20)
+		{
+			x12[c2] = (Float_t)c2+1.0;
+			ex12[c2] = 0.0;
+			y12[c2] = mean;
+			ey12[c2] = sd/sqrt(N)+0.01;
+			++c2;
+		}
+	}
+
+	TCanvas* Q12_calculus_based = new TCanvas("Q19_calculus_based","Q19_calculus_based",1200,1200);
+	TPad* p15 = new TPad("p15","p15",0.0,0.0,1.0,1.0);
+	p15->Draw();
+	p15->SetLeftMargin(lmargin);
+	p15->SetRightMargin(rmargin);
+	p15->SetTopMargin(tmargin);
+	p15->SetBottomMargin(bmargin);
+	p15->SetGridx();
+	p15->SetGridy();
+	p15->SetTickx();
+	p15->SetTicky();
+	p15->cd();
+	h_mark->Draw();
+
+	TGraphErrors *Q12_2 = new TGraphErrors(m2,x12,y12,ex12,ey12);
+	Q12_2->SetMarkerStyle(standard_marker_style);
+	Q12_2->SetMarkerSize(standard_marker_size);
+	TF1 *Q12_calculus_based_fit = new TF1("Q12_calculus_based_fit","[0]*x+[1]",xlow,xhigh);
+	Q12_2->Fit("Q12_calculus_based_fit","0");
+	Q12_2->Draw("P same");
+	Q12_calculus_based_fit->SetLineColor(kBlack);
+	Q12_calculus_based_fit->SetLineWidth(standard_line_width);
+	Q12_calculus_based_fit->Draw("same");
+	p15->Print("Q20_calculus_based.pdf");
+
 
 	// //=====Question 17 vs. 16 for PHYS135A/B.  m = number of times taught.=====//
 	// TCanvas* Q16_Q17_algebra_based = new TCanvas("Q16_Q17_algebra_based","Q16_Q17_algebra_based",1200,1200);
